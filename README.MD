@@ -12,3 +12,8 @@
 1. 安装Spark、maven等相关软件
 2. 打开shell/baseEnv.sh这个文件修改相应的路径
 3. 全项目编译在项目根目录下执行 *mvn package* 或 *mvn clean package*
+4. 用命令
+```
+mvn package -pl basic -amd
+```
+编译basic模块及依赖basic模块的其他模块
