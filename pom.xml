@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project
+        xmlns="http://maven.apache.org/POM/4.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+>
+    <!-- 固定值 -->
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- 接下来的是maven的GAV标识 -->
+    <groupId>cat.dream.miaomiao</groupId>
+    <artifactId>spark.small.demo</artifactId>
+    <version>1.0</version>
+
+
+    <!-- 模块列表 -->
+    <modules>
+        <!-- 基础示例 -->
+        <module>basic</module>
+    </modules>
+
+    <!-- 包类型 -->
+    <packaging>pom</packaging>
+
+    <!-- 名称，给人看的 -->
+    <name>Spark Small Demo Parent POM</name>
+
+    <!-- 开发人员列表 -->
+    <developers>
+        <developer>
+            <id>wj</id>
+            <name>Wang Jin</name>
+            <email>SolitudeSword@qq.com</email>
+        </developer>
+    </developers>
+
+
+    <!-- 属性 -->
+    <properties>
+        <!--文件拷贝时的编码-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!--编译时的编码-->
+        <maven.complier.encoding>UTF-8</maven.complier.encoding>
+        <!-- 项目配置 -->
+        <project.home>${basedir}</project.home>
+        <!--  -->
+        <dep.scope>provided</dep.scope>
+    </properties>
+
+    <!-- 依赖列表 -->
+    <dependencies>
+        <dependency>
+            <groupId>org.spark-project.spark</groupId>
+            <artifactId>unused</artifactId>
+            <version>1.0.0</version>
+            <scope>${dep.scope}</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>2.11.8</version>
+            <scope>${dep.scope}</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_2.11</artifactId>
+            <version>2.1.1</version>
+            <scope>${dep.scope}</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.scala-tools</groupId>
+                <artifactId>maven-scala-plugin</artifactId>
+                <version>2.15.2</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>testCompile</goal>
+                        </goals>
+                        <configuration>
+                            <args>
+                                <arg>-dependencyfile</arg>
+                                <arg>${project.build.directory}/.scala_dependencies</arg>
+                            </args>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.10</version>
+                <configuration>
+                    <useFile>false</useFile>
+                    <disableXmlReport>true</disableXmlReport>
+                    <includes>
+                        <include>**/*Test.*</include>
+                        <include>**/*Suite.*</include>
+                    </includes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
