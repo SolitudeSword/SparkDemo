@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project
+        xmlns="http://maven.apache.org/POM/4.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+>
+    <!-- 固定值 -->
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- 要引用的父模块 -->
+    <parent>
+        <artifactId>spark.small.demo</artifactId>
+        <groupId>cat.dream.miaomiao</groupId>
+        <version>1.0</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>demo.public.pom</artifactId>
+    <version>1.0</version>
+
+    <!-- 模块列表 -->
+    <modules>
+        <!-- 基础示例 -->
+        <module>../basic</module>
+    </modules>
+
+    <!-- 包类型 -->
+    <packaging>pom</packaging>
+
+    <!-- 依赖列表 -->
+    <dependencies>
+        <!-- 公用模块，为其他模块提供函数 -->
+        <dependency>
+            <groupId>cat.dream.miaomiao</groupId>
+            <artifactId>spark.small.demo.base</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
+</project>

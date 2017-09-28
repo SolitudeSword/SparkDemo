@@ -5,9 +5,8 @@
     @author 王锦
 !
 
-# 项目根目录
-ProjectRootDir=`dirname $0`
-ProjectRootDir=`readlink -f ${ProjectRootDir}`
+
+
 # spark-submit的路径
 if [ -z ${SPARK_HOME} ]; then
     # 如果没有定义SparkHome需要在这里手动修改
@@ -15,3 +14,6 @@ if [ -z ${SPARK_HOME} ]; then
 else
     SparkSubmitPath=${SPARK_HOME}/bin/spark-submit
 fi
+
+# spark的提交地址
+SparkMaster=spark://127.0.0.1:7077
