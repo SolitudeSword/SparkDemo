@@ -25,5 +25,11 @@
         <parameter value="E:\person\scala\SparkDemo\basic\target/.scala_dependencies" />
       </parameters>
     </profile>
+    <profile name="Maven 5" modules="hbase">
+      <parameters>
+        <parameter value="-dependencyfile" />
+        <parameter value="E:\person\scala\SparkDemo\hbase\target/.scala_dependencies" />
+      </parameters>
+    </profile>
   </component>
 </project>

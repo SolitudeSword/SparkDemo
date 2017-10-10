@@ -8,11 +8,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="base" />
         <module name="basic" />
+        <module name="hbase" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="base" target="1.5" />
       <module name="basic" target="1.5" />
+      <module name="hbase" target="1.5" />
       <module name="public" target="1.5" />
       <module name="SparkDemo" target="1.5" />
     </bytecodeTargetLevel>
