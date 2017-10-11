@@ -17,6 +17,7 @@
 ## hbase
 与hbase的连接演示，包含
 - HBaseCount 计数HBase表的记录条数
+- HBaseExport 导出HBase表到HDFS
 
 
 # 部署说明
