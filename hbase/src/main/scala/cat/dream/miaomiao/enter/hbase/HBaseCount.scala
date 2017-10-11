@@ -1,5 +1,6 @@
 package cat.dream.miaomiao.enter.hbase
 
+import cat.dream.miaomiao.hbase.utils
 import org.apache.hadoop.hbase.{HBaseConfiguration, TableName}
 import org.apache.hadoop.hbase.client.{ConnectionFactory, Result}
 import org.apache.hadoop.hbase.io.ImmutableBytesWritable
@@ -27,20 +28,17 @@ object HBaseCount {
 
         Logger.getLogger("org").setLevel(org.apache.log4j.Level.ERROR)
 
+        val tableName = args(0)
         // 判断表是否存在
         val conf = HBaseConfiguration.create()
-        val tableName = TableName.valueOf(args(0))
-        val tableNameString = tableName.getNameAsString
-        val connection = ConnectionFactory.createConnection(conf)
-        val hbaseAdmin = connection.getAdmin
-        if (!hbaseAdmin.tableExists(tableName)) {
-            println(s"HBase table[$tableNameString] 不存在")
+        if (!utils.tableExist(tableName, conf)) {
+            println(s"HBase table[$tableName] not exists")
             return
         }
 
         //设置查询的表名
-        conf.set(TableInputFormat.INPUT_TABLE, tableNameString)
-        val sc = new SparkContext(new SparkConf().setAppName(s"HBaseCount-$tableNameString"))
+        conf.set(TableInputFormat.INPUT_TABLE, tableName)
+        val sc = new SparkContext(new SparkConf().setAppName(s"HBaseCount-$tableName"))
 
         // 以HBase表数据为源，建立RDD，之后可以做任意的RDD操作了
         val count = sc
@@ -48,7 +46,7 @@ object HBaseCount {
                 classOf[ImmutableBytesWritable],
                 classOf[Result])
             .count()
-        println(s"HBase table[$tableNameString] count = $count")
+        println(s"HBase table[$tableName] count = $count")
         sc.stop()
     }
 }
