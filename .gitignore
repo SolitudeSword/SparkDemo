@@ -1,5 +1,6 @@
 /target/
 /basic/target/
 /base/target/
+/hbase/target/
 /.idea/
 *.iml

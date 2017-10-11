@@ -23,6 +23,7 @@
     <modules>
         <!-- 基础示例 -->
         <module>../basic</module>
+        <module>../hbase</module>
     </modules>
 
     <!-- 包类型 -->

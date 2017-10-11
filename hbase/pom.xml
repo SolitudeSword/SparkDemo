@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!-- 固定值 -->
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- 要引用的父模块 -->
+    <parent>
+        <artifactId>demo.public.pom</artifactId>
+        <groupId>cat.dream.miaomiao</groupId>
+        <version>1.0</version>
+        <relativePath>../public/pom.xml</relativePath>
+    </parent>
+
+    <artifactId>spark.small.demo.hbase</artifactId>
+    <version>1.0</version>
+
+    <!-- 名称，给人看的 -->
+    <name>Spark Small Demo Hbase Module</name>
+
+    <!-- 依赖列表 -->
+    <dependencies>
+        <!-- 连接HBase服务器的jar包 -->
+        <dependency>
+            <groupId>org.apache.hbase</groupId>
+            <artifactId>hbase-server</artifactId>
+            <version>1.2.6</version>
+            <scope>${dep.scope}</scope>
+        </dependency>
+    </dependencies>
+</project>

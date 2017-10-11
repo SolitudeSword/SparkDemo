@@ -23,7 +23,7 @@ for testFn in ${testFns[*]}; do
         --executor-memory 1g \
         --executor-cores 2 \
         --total-executor-cores 6 \
-        --driver-class-path ${ProjectRootDir}/base/target/spark.small.demo.base-1.0.jar \
+        --driver-class-path ${BaseJar} \
         --class cat.dream.miaomiao.enter.WordCount \
         ${ProjectRootDir}/basic/target/spark.small.demo.basic-1.0.jar ${testFn}
 done
