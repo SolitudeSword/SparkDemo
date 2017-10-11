@@ -29,7 +29,7 @@ object HBaseExport {
     def main(args: Array[String]): Unit = {
         Logger.getRootLogger.setLevel(org.apache.log4j.Level.ERROR)
         if (args.length < 2) {
-            Logger.getLogger("org").fatal("参数个数不足，必须不能少于1个")
+            Logger.getLogger("org").fatal("参数个数不足，必须不能少于2个")
             return
         }
 

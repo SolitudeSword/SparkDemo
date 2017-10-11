@@ -36,7 +36,7 @@ object HBaseCount {
             return
         }
 
-        //设置查询的表名
+        // 设置查询的表名
         conf.set(TableInputFormat.INPUT_TABLE, tableName)
         val sc = new SparkContext(new SparkConf().setAppName(s"HBaseCount-$tableName"))
 
