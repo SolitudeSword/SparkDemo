@@ -19,6 +19,7 @@
 - HBaseCount 计数HBase表的记录条数
 - HBaseExport 导出HBase表到HDFS
 - HBaseImport 从备份的HDFS导入到HBase
+- Basic Scala操作HBase的基本操作，和Spark没什么关系
 
 
 # 部署说明

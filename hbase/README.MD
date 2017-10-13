@@ -20,3 +20,9 @@
 将备份在HDFS的数据导回到HBase表中，要求先把表创建好
 ### 实现方法
 使用LoadIncrementalHFiles对象的doBulkLoad方法将数据导入HBase，不过导入完成之后HDFS上的数据会消失，只保留目录
+
+## Basic
+### 功能
+这个示例和Spark其实没什么太大关系，是一些Scala操作HBase的基本操作
+### 实现方法
+调用HBase开放给Java的接口
