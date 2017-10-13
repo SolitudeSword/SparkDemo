@@ -4,10 +4,8 @@
 
 ### 功能
 计数HBase表的记录条数
-
 ### 实现方法
 以HBase表的数据为源生成RDD，然后通过count算子得到记录条数，也可以用其他算子实现需要的功能
-
 
 ## HBaseExport
 ### 功能
@@ -26,3 +24,9 @@
 这个示例和Spark其实没什么太大关系，是一些Scala操作HBase的基本操作
 ### 实现方法
 调用HBase开放给Java的接口
+
+## SparkSave
+### 功能
+将RDD的数据直接存入HBase
+### 实现方法
+使用RDD的saveAsNewAPIHadoopDataset方法

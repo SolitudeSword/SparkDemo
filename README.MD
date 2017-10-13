@@ -20,6 +20,7 @@
 - HBaseExport 导出HBase表到HDFS
 - HBaseImport 从备份的HDFS导入到HBase
 - Basic Scala操作HBase的基本操作，和Spark没什么关系
+- SparkSave 将RDD存入HBase
 
 
 # 部署说明

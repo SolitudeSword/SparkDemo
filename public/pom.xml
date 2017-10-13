@@ -18,6 +18,8 @@
 
     <artifactId>demo.public.pom</artifactId>
     <version>1.0</version>
+    <!-- 名称，给人看的 -->
+    <name>Spark Small Demo Public POM</name>
 
     <!-- 模块列表 -->
     <modules>
