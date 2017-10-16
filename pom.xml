@@ -66,6 +66,13 @@
             <version>2.1.1</version>
             <scope>${dep.scope}</scope>
         </dependency>
+        <!-- 单元测试依赖 -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -89,7 +96,7 @@
                         <goals>
                             <goal>compile</goal>
                             <!-- 如果要使用测试代码，启用下面的goal -->
-                            <!-- <goal>testCompile</goal> -->
+                            <goal>testCompile</goal>
                         </goals>
                         <configuration>
                             <!-- 消除Multiple versions of scala libraries detected!报错 -->
