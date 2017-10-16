@@ -88,13 +88,12 @@
                     <execution>
                         <goals>
                             <goal>compile</goal>
-                            <goal>testCompile</goal>
+                            <!-- 如果要使用测试代码，启用下面的goal -->
+                            <!-- <goal>testCompile</goal> -->
                         </goals>
                         <configuration>
-                            <args>
-                                <arg>-dependencyfile</arg>
-                                <arg>${project.build.directory}/.scala_dependencies</arg>
-                            </args>
+                            <!-- 消除Multiple versions of scala libraries detected!报错 -->
+                            <checkMultipleScalaVersions>false</checkMultipleScalaVersions>
                         </configuration>
                     </execution>
                 </executions>
