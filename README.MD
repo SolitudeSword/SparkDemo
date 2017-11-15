@@ -13,6 +13,7 @@
 ## basic
 基础示例，包含
 - WordCount 统计文章的单词个数
+- DealLogs 统计日志的PV、IP、UV
 
 ## hbase
 与hbase的连接演示，包含
