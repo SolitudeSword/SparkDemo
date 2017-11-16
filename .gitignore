@@ -2,5 +2,6 @@
 /basic/target/
 /base/target/
 /hbase/target/
+/sql/target/
 /.idea/
 *.iml

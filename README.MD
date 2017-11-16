@@ -23,6 +23,10 @@
 - Basic Scala操作HBase的基本操作，和Spark没什么关系
 - SparkSave 将RDD存入HBase
 
+## sql
+SparkSQL的示例
+- DealLogsSQL 统计日志的PV、IP、UV
+
 
 # 部署说明
 1. 安装Spark、maven等相关软件

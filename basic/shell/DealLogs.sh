@@ -12,7 +12,7 @@ ProjectRootDir=`readlink -f \`dirname $0\`/../../`
 source ${ProjectRootDir}/shell/baseEnv.sh
 
 
-for hour in `seq -w 1 23`; do
+for hour in `seq -w 0 23`; do
     for plan in `seq 1 2`; do
         ${SparkSubmitPath} \
             --master ${SparkMaster} \

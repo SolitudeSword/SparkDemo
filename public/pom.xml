@@ -26,6 +26,7 @@
         <!-- 基础示例 -->
         <module>../basic</module>
         <module>../hbase</module>
+        <module>../sql</module>
     </modules>
 
     <!-- 包类型 -->
