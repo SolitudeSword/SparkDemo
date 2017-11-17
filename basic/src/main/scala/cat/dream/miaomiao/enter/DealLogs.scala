@@ -44,7 +44,6 @@ object DealLogs {
 
         val sc = new SparkContext(new SparkConf().setAppName(s"DealLogs-$hour-plan$plan"))
 
-        // 这里的RDD偷懒就自己写死了，正式使用时使用textFile读文件
         val logsRdd = sc
             .textFile(s"hdfs://$hdfsMaster/guess.union2.50bang.org/logs/$hour.txt")
             .map(_.split("\t"))
